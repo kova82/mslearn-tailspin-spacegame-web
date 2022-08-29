@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 # ASP.NET Core
 # Build and test ASP.NET Core projects targeting .NET Core.
 # Add steps that run tests, create a NuGet package, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
+=======
+>>>>>>> uni-tests
 trigger:
 - '*'
 
@@ -51,6 +54,17 @@ steps:
     projects: '**/*.csproj'
 
 - task: DotNetCoreCLI@2
+<<<<<<< HEAD
+=======
+  displayName: 'Run unit tests - $(buildConfiguration)'
+  inputs:
+    command: 'test'
+    arguments: '--no-build --configuration $(buildConfiguration)'
+    publishTestResults: true
+    projects: '**/*.Tests.csproj'
+
+- task: DotNetCoreCLI@2
+>>>>>>> uni-tests
   displayName: 'Publish the project - $(buildConfiguration)'
   inputs:
     command: 'publish'
